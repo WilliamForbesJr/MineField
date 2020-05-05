@@ -1,0 +1,10 @@
+C:\Users\William\Desktop\School\Visual C#\MineField\MineField\MineField\bin\Debug\MineField.exe.config
+C:\Users\William\Desktop\School\Visual C#\MineField\MineField\MineField\bin\Debug\MineField.exe
+C:\Users\William\Desktop\School\Visual C#\MineField\MineField\MineField\bin\Debug\MineField.pdb
+C:\Users\William\Desktop\School\Visual C#\MineField\MineField\MineField\obj\Debug\MineField.csprojResolveAssemblyReference.cache
+C:\Users\William\Desktop\School\Visual C#\MineField\MineField\MineField\obj\Debug\MineField.Form1.resources
+C:\Users\William\Desktop\School\Visual C#\MineField\MineField\MineField\obj\Debug\MineField.Properties.Resources.resources
+C:\Users\William\Desktop\School\Visual C#\MineField\MineField\MineField\obj\Debug\MineField.csproj.GenerateResource.Cache
+C:\Users\William\Desktop\School\Visual C#\MineField\MineField\MineField\obj\Debug\MineField.csproj.CoreCompileInputs.cache
+C:\Users\William\Desktop\School\Visual C#\MineField\MineField\MineField\obj\Debug\MineField.exe
+C:\Users\William\Desktop\School\Visual C#\MineField\MineField\MineField\obj\Debug\MineField.pdb
