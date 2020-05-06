@@ -31,13 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_file_newGame = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_file_exit = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.easy5SquaresToWinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.medium10SquaresToWinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hard15SquaresToWinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_options_easy = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_options_medium = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_options_hard = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_about = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,7 +62,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.lblWins = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.lblWinPercent = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -83,68 +83,78 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
+            this.menu_file_newGame,
+            this.menu_file_exit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "&File";
             // 
-            // exitToolStripMenuItem
+            // menu_file_newGame
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
+            this.menu_file_newGame.Name = "menu_file_newGame";
+            this.menu_file_newGame.Size = new System.Drawing.Size(152, 22);
+            this.menu_file_newGame.Text = "&New Game";
+            this.menu_file_newGame.Click += new System.EventHandler(this.menu_file_newGame_Click);
+            // 
+            // menu_file_exit
+            // 
+            this.menu_file_exit.Name = "menu_file_exit";
+            this.menu_file_exit.Size = new System.Drawing.Size(152, 22);
+            this.menu_file_exit.Text = "E&xit";
+            this.menu_file_exit.Click += new System.EventHandler(this.menu_file_exit_Click);
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.CheckOnClick = true;
             this.optionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.easy5SquaresToWinToolStripMenuItem,
-            this.medium10SquaresToWinToolStripMenuItem,
-            this.hard15SquaresToWinToolStripMenuItem});
+            this.menu_options_easy,
+            this.menu_options_medium,
+            this.menu_options_hard});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
-            // easy5SquaresToWinToolStripMenuItem
+            // menu_options_easy
             // 
-            this.easy5SquaresToWinToolStripMenuItem.CheckOnClick = true;
-            this.easy5SquaresToWinToolStripMenuItem.Name = "easy5SquaresToWinToolStripMenuItem";
-            this.easy5SquaresToWinToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.easy5SquaresToWinToolStripMenuItem.Text = "Easy: 5 squares to win";
-            this.easy5SquaresToWinToolStripMenuItem.Click += new System.EventHandler(this.easy5SquaresToWinToolStripMenuItem_Click);
+            this.menu_options_easy.CheckOnClick = true;
+            this.menu_options_easy.Name = "menu_options_easy";
+            this.menu_options_easy.Size = new System.Drawing.Size(216, 22);
+            this.menu_options_easy.Text = "Easy: 5 squares to win";
+            this.menu_options_easy.Click += new System.EventHandler(this.menu_options_easy_Click);
             // 
-            // medium10SquaresToWinToolStripMenuItem
+            // menu_options_medium
             // 
-            this.medium10SquaresToWinToolStripMenuItem.Checked = true;
-            this.medium10SquaresToWinToolStripMenuItem.CheckOnClick = true;
-            this.medium10SquaresToWinToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.medium10SquaresToWinToolStripMenuItem.DoubleClickEnabled = true;
-            this.medium10SquaresToWinToolStripMenuItem.Name = "medium10SquaresToWinToolStripMenuItem";
-            this.medium10SquaresToWinToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.medium10SquaresToWinToolStripMenuItem.Text = "Medium: 10 squares to win";
-            this.medium10SquaresToWinToolStripMenuItem.Click += new System.EventHandler(this.medium10SquaresToWinToolStripMenuItem_Click);
+            this.menu_options_medium.Checked = true;
+            this.menu_options_medium.CheckOnClick = true;
+            this.menu_options_medium.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.menu_options_medium.DoubleClickEnabled = true;
+            this.menu_options_medium.Name = "menu_options_medium";
+            this.menu_options_medium.Size = new System.Drawing.Size(216, 22);
+            this.menu_options_medium.Text = "Medium: 10 squares to win";
+            this.menu_options_medium.Click += new System.EventHandler(this.menu_options_medium_Click);
             // 
-            // hard15SquaresToWinToolStripMenuItem
+            // menu_options_hard
             // 
-            this.hard15SquaresToWinToolStripMenuItem.CheckOnClick = true;
-            this.hard15SquaresToWinToolStripMenuItem.Name = "hard15SquaresToWinToolStripMenuItem";
-            this.hard15SquaresToWinToolStripMenuItem.Size = new System.Drawing.Size(216, 22);
-            this.hard15SquaresToWinToolStripMenuItem.Text = "Hard: 15 squares to win";
-            this.hard15SquaresToWinToolStripMenuItem.Click += new System.EventHandler(this.hard15SquaresToWinToolStripMenuItem_Click);
+            this.menu_options_hard.CheckOnClick = true;
+            this.menu_options_hard.Name = "menu_options_hard";
+            this.menu_options_hard.Size = new System.Drawing.Size(216, 22);
+            this.menu_options_hard.Text = "Hard: 15 squares to win";
+            this.menu_options_hard.Click += new System.EventHandler(this.menu_options_hard_Click);
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
+            this.menu_about});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "&Help";
             // 
-            // aboutToolStripMenuItem
+            // menu_about
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.aboutToolStripMenuItem.Text = "&About";
+            this.menu_about.Name = "menu_about";
+            this.menu_about.Size = new System.Drawing.Size(107, 22);
+            this.menu_about.Text = "&About";
+            this.menu_about.Click += new System.EventHandler(this.menu_about_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -417,7 +427,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label21);
             this.groupBox1.Controls.Add(this.lblWinPercent);
             this.groupBox1.Controls.Add(this.lblWins);
             this.groupBox1.Location = new System.Drawing.Point(12, 380);
@@ -426,16 +435,6 @@
             this.groupBox1.Size = new System.Drawing.Size(471, 45);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
-            // 
-            // label21
-            // 
-            this.label21.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label21.Location = new System.Drawing.Point(193, 13);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(46, 23);
-            this.label21.TabIndex = 2;
-            this.label21.Text = "lbl21";
-            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblWinPercent
             // 
@@ -472,13 +471,13 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menu_file_exit;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem easy5SquaresToWinToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem medium10SquaresToWinToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hard15SquaresToWinToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menu_options_easy;
+        private System.Windows.Forms.ToolStripMenuItem menu_options_medium;
+        private System.Windows.Forms.ToolStripMenuItem menu_options_hard;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menu_about;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -502,8 +501,8 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label lblWins;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lblWinPercent;
+        private System.Windows.Forms.ToolStripMenuItem menu_file_newGame;
     }
 }
 

@@ -19,8 +19,7 @@ namespace MineField
             NewGame();
         }
 
-
-        // lower and upper bounds for mine gen (needs to be const, will add later)
+        // lower and upper bounds for mine gen
         const int MIN = 1;
         const int MAX = 20;
 
@@ -57,17 +56,20 @@ namespace MineField
             // flag for if user hit mine
             bool hitMine = boxSelected.TabIndex == mineLocation;
 
+            // user gets winning clicks without hitting mine
             if (clickCounter == winningClicks && hitMine == false)
             {
                 boxSelected.BackColor = Color.White;
                 UpdateStats("win");
             }
 
+            // user lands on mine
             else if (hitMine)
             {
                 Animate.BlinkMine(boxSelected);
                 UpdateStats("lose");
             }
+            // user doesn't land on mine
             else
             {
                 boxSelected.BackColor = Color.White;
@@ -83,6 +85,7 @@ namespace MineField
             // increment wins if player wins
             if (result == "win") wins += 1;
 
+            // update UI and display game over message
             updateResultsDisplay();
             DisplayGameOver(result);
         }
@@ -139,32 +142,54 @@ namespace MineField
             mineLocation = randomMine.Next(MIN, MAX);
         }
 
-
-        private void easy5SquaresToWinToolStripMenuItem_Click(object sender, EventArgs e)
+        // menu  difficulty option event handlers
+        private void menu_options_easy_Click(object sender, EventArgs e)
         {
             winningClicks = 5;
-            easy5SquaresToWinToolStripMenuItem.Checked = true;
-            medium10SquaresToWinToolStripMenuItem.Checked = false;
-            hard15SquaresToWinToolStripMenuItem.Checked = false;
+            menu_options_easy.Checked = true;
+            menu_options_medium.Checked = false;
+            menu_options_hard.Checked = false;
             NewGame();
         }
 
-        private void medium10SquaresToWinToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menu_options_medium_Click(object sender, EventArgs e)
         {
             winningClicks = 10;
-            easy5SquaresToWinToolStripMenuItem.Checked = false;
-            medium10SquaresToWinToolStripMenuItem.Checked = true;
-            hard15SquaresToWinToolStripMenuItem.Checked = false;
+            menu_options_easy.Checked = false;
+            menu_options_medium.Checked = true;
+            menu_options_hard.Checked = false;
             NewGame();
         }
 
-        private void hard15SquaresToWinToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menu_options_hard_Click(object sender, EventArgs e)
         {
             winningClicks = 15;
-            easy5SquaresToWinToolStripMenuItem.Checked = false;
-            medium10SquaresToWinToolStripMenuItem.Checked = false;
-            hard15SquaresToWinToolStripMenuItem.Checked = true;
+            menu_options_easy.Checked = false;
+            menu_options_medium.Checked = false;
+            menu_options_hard.Checked = true;
             NewGame();
+        }
+
+        // show about and how to play
+        private void menu_about_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Minefield \n " +
+                "by: William Forbes \n \n" +
+                "How to Play: Click the boxes and try not to land on the mine."
+            );
+        }
+
+        // start new game
+        private void menu_file_newGame_Click(object sender, EventArgs e)
+        {
+            NewGame();
+        }
+
+        // exit app
+        private void menu_file_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
